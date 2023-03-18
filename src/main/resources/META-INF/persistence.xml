@@ -1,0 +1,6 @@
+<persistence-unit name="your-persistence-unit-name">
+    <class>jp.co.sss.training.entity.TrainingUser</class>
+    <named-query name="findByUserIdNamedQuery">
+        <query>SELECT u FROM TrainingUser u WHERE u.userId LIKE CONCAT('%', :keyword, '%')</query>
+    </named-query>
+</persistence-unit>

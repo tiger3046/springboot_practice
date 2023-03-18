@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<style>
+
+	table {
+  		border-collapse: collapse;
+  		width: 100%;
+		max-width: 800px;
+		background-color: purple;
+		color: white;
+	}
+		
+	th,td {
+		text-align: left;
+		padding: 8px;
+		border: 1px solid white;
+	}
+		
+	th {
+		  background-color: white;
+		  color: purple;
+	}
+</style>
+</head>
+<body>
+	<form action="/lesson04_01/serchByUserIdNamedQuery">
+		ユーザー名　(あいまい検索):<input type="text" name="keyword" />
+		<input type="submit" value="検索する" />
+	</form>
+	
+	<table>
+		<tr>
+			<th>ID:</th>
+			<th>ユーザー名:</th>
+		</tr>
+		<tr th:each="user:${users}">
+			<td th:text="${user.id}">
+			<td th:text="${user.userId}">
+		</tr>
+	</table>
+</body>
+</html>
